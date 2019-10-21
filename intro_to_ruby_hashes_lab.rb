@@ -15,21 +15,16 @@ def id_generator
 end
 
 def my_hash_creator(key, value)
-   {:name =>"Grace Hopper"}
+   {key => value}
 end
 
 def read_from_hash(hash, key)
-  # return the correct value using the hash and key parameters
-  person={:name =>"Steve"}
-  if person[:age]
-    puts "age 31"
-  else
-    puts "no age"
+  hash[key]
 end
 
 def update_counting_hash(hash, key)
- hash= {"Hello" =>5}
- hash["Hello"]+= 1
+  hash[key] ? hash[key] += 1 : hash[key] = 1
+  hash
 end
 
 
